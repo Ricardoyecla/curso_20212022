@@ -1,4 +1,4 @@
-0#Actividades 3.5
+#Actividades 3.5
 _Actividades para realizar en el aula.
 
 ### Pre-requisitos 📋
