@@ -19,7 +19,8 @@ ricardo@ricardo-B550M-S2H:~$ cd /tmp/
     
 2. Descarga el fichero **volver_a_ser_un_niño.txt** en **/tmp**, usa el comando **wget** con la dirección [https://aulavirtual.murciaeduca.es/pluginfile.php/4345249/mod_resource/content/1/volver_a_ser_un_ni%C3%B1o.txt ](https://aulavirtual.murciaeduca.es/pluginfile.php/4345249/mod_resource/content/1/volver_a_ser_un_niño.txt%20wget) (debes poner **wget** y **la ruta**)
 ```sh
-   
+ricardo@ricardo-B550M-S2H:/tmp$ wget https://aulavirtual.murciaeduca.es/pluginfile.php/4345249/mod_resource/content/1/volver_a_ser_un_ni%C3%B1o.txt
+
 ```  
 3. Muestra las líneas donde **aparezcan** la cadena **nombre**.
 
