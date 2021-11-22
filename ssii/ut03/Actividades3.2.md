@@ -1,0 +1,53 @@
+# Actividades 3.2
+
+1. Pon como **directorio actual** **/var/log** usando una **ruta absoluta**.
+```sh
+ricardo@profesor-HP-ProDesk-600-G2-SFF:~$ cd /var/log/
+```
+2. **Crea** la carpeta **ejercicios** dentro de **/tmp**. Usa **ruta absoluta**.
+```sh
+ricardo@profesor-HP-ProDesk-600-G2-SFF:/var/log$ mkdir /tmp/ejercicios
+```
+3. **Copia** dentro de la carpeta ejercicios, **solo los ficheros**, que **empiecen** por la letra **c** y los que **terminen** por **p** que estén en la carpeta **/var/run**. Usando rutas **relavitas**.
+```sh
+ricardo@profesor-HP-ProDesk-600-G2-SFF:/var/log$ cp ../run/c* ../run/*p ../../tmp/ejercicios/
+```
+4. **Crea otra carpeta** llamada **enlaces dentro de ejercicios**, y dentro de esta crea un **enlace duro
+para cada uno de los ficheros** que hay en **ejercicios**.
+```sh
+
+```
+5. ¿Como sabes que se han creado correctamente los enlaces?
+
+7. Crea otra carpeta llamada simbolicos dentro de ejercicios y dentro de esta crea un enlace
+simbolico para cada uno de los ficheros que hay en ejercicios. Guardar los datos de los
+posibles errores en el fichero errores.log.
+
+7. ¿Como sabes que se han creado correctamente los enlaces?
+
+9. Copia todos los ficheros con dos caracteres que hay dentro de /bin a la carpeta llamada
+comandos (que debes crear dentro de ejercicios).
+
+9. Cambia tu directorio actual a /tmp/ejercicios.
+
+11. Crea otra carpeta llamada todos dentro de /tmp, usando ruta relativa y copia en ella todo lo
+que hay dentro de ejercicios (incluyendo directorios).
+
+11. Crea dentro de ejercicios una carpeta llamada movidos y dentro de esta copia todos los
+ficheros que hay dentro todos.
+
+12. Copia el fichero .bashrc de tu carpeta personal a simbolicos pero con el nombre
+cambiado.txt
+
+13. Borra todos los ficheros que hay dentro de la carpeta simbolicos que esta en todos. Debe
+pedir confirmación.
+
+14. Borra la carpeta simbolicos que esta en otros.
+
+16. Borra la carpeta otros y todos su contenido.
+
+18. Crea dentro de ejemplos la carpeta llamada cabeceras, donde abra un fichero llamado
+redireccion1.txt con un banner (figlet) de tu nombre.
+
+17. Añade al fichero redireccion1.txt las entradas del directorio raíz.
+
