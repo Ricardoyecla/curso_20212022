@@ -2,7 +2,7 @@
 Actividades para realizar en el aula.
 
 ## Pre-requisitos 📋
-
+Ver el documento volver_a_ser_un_niño.txt o descargar con guardar como [aquí](volver_a_ser_un_niño.txt)
 Que cosas necesitas para instalar el software y como instalarlas_
 
 0. Instala el programa **wget**, usando el comando **apt**.
@@ -17,7 +17,7 @@ ricardo@ricardo-B550M-S2H:/tmp$ sudo apt install wget
 ricardo@ricardo-B550M-S2H:~$ cd /tmp/
 ```
     
-2. Descarga el fichero **volver_a_ser_un_niño.txt** en **/tmp**, usa el comando **wget** con la dirección [https://aulavirtual.murciaeduca.es/pluginfile.php/4345249/mod_resource/content/1/volver_a_ser_un_ni%C3%B1o.txt ](https://aulavirtual.murciaeduca.es/pluginfile.php/4345249/mod_resource/content/1/volver_a_ser_un_niño.txt%20wget) (debes poner **wget** y **la ruta**)
+2. Descarga el fichero **volver_a_ser_un_niño.txt** en **/tmp**, usa el comando **wget** con la dirección [https://aulavirtual.murciaeduca.es/pluginfile.php/4345249/mod_resource/content/1/volver_a_ser_un_niño.txt ](https://aulavirtual.murciaeduca.es/pluginfile.php/4345249/mod_resource/content/1/volver_a_ser_un_niño.txt) (debes poner **wget** y **la ruta**)
 ```sh
 ricardo@ricardo-B550M-S2H:/tmp$ wget https://aulavirtual.murciaeduca.es/pluginfile.php/4345249/mod_resource/content/1/volver_a_ser_un_ni%C3%B1o.txt
 
