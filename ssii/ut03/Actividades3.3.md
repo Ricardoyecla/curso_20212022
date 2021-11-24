@@ -1,7 +1,7 @@
 # Actividades3.3
 Haciendo uso del fichero de texto **fichero_para_grep.txt** escribe el comando con la expresión regular para mostrar las líneas indicadas.
 ## Descarga el fichero fichero_para_grep.txt
-see documentation [here](fichero_para_grep.txt)
+Ver el documento o descargar con guardar como [aquí](fichero_para_grep.txt)
 
 ## Preguntas
 1. Mostrar las líneas que **aparezca oso o per**.
