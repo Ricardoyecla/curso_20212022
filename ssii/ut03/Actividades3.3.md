@@ -56,8 +56,17 @@ grep -E 'o\>' fichero_para_grep.txt
 grep -E '[ao]\>' fichero_para_grep.txt
 grep -E '(a|o)\>' fichero_para_grep.txt 
 ```
-13. Buscar las palabras que empicen por varias s.
-``sh```
-14. Buscar palabras con más de una s.
-```sh```
-15. Buscar las palabras que no empiecen por o ó a.```sh```
+13. Buscar las **palabras** que **empicen** por **varias s**.
+```sh
+grep -E '\<ss+[a-zA-Zñ0-9]*\>' fichero_para_grep.txt
+grep -E '\<ss+[^ \.;,:]*\>' fichero_para_grep.txt
+```
+14. Buscar **palabras** con **más de una s**.
+```sh
+grep -E 's{2,}' fichero_para_grep.txt
+grep -E '\<[[:alpha:]]+ss+[[:alpha:]]*\>' fichero_para_grep.txt
+```
+15. Buscar las **palabras** que no **empiecen** por **o** ó **a**.
+```sh
+grep -E '\<[^oa][^ ]*\>' fichero_para_grep.txt
+```
