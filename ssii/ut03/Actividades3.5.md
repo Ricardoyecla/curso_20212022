@@ -8,13 +8,13 @@ Que cosas necesitas para instalar el software y como instalarlas_
 0. Instala el programa **wget**, usando el comando **apt**.
     
 ```sh
-ricardo@ricardo-B550M-S2H:/tmp$ sudo apt install wget
+sudo apt install wget
 
 ```
     
 1. Cambiate de directorio a **/tmp**
 ```sh
-ricardo@ricardo-B550M-S2H:~$ cd /tmp/
+cd /tmp/
 ```
     
 2. Descarga el fichero **volver_a_ser_un_niño.txt** en **/tmp**, usa el comando **wget** con la dirección [https://aulavirtual.murciaeduca.es/pluginfile.php/4345249/mod_resource/content/1/volver_a_ser_un_niño.txt ](https://aulavirtual.murciaeduca.es/pluginfile.php/4345249/mod_resource/content/1/volver_a_ser_un_niño.txt) (debes poner **wget** y **la ruta**)
