@@ -15,17 +15,26 @@ ricardo@profesor-HP-ProDesk-600-G2-SFF:/var/log$ cp ../run/c* ../run/*p ../../tm
 4. **Crea otra carpeta** llamada **enlaces dentro de ejercicios**, y dentro de esta crea un **enlace duro
 para cada uno de los ficheros** que hay en **ejercicios**.
 ```sh
-
+ricardo@profesor-HP-ProDesk-600-G2-SFF:/var/log$ mkdir /tmp/ejercicios/enlaces
+ricardo@profesor-HP-ProDesk-600-G2-SFF:/var/log$ cp -l /tmp/ejercicios/* /tmp/ejercicios/enlaces/
 ```
 5. ¿Como sabes que se han creado correctamente los enlaces?
+```sh
+ricardo@profesor-HP-ProDesk-600-G2-SFF:/var/log$ ls -l /tmp/ejercicios/enlaces/
 
-7. Crea otra carpeta llamada simbolicos dentro de ejercicios y dentro de esta crea un enlace
-simbolico para cada uno de los ficheros que hay en ejercicios. Guardar los datos de los
-posibles errores en el fichero errores.log.
-
+```
+6. Crea otra **carpeta llamada simbolicos** dentro de **ejercicios** y dentro de esta **crea un enlace
+simbolico** para cada uno de los **ficheros que hay en ejercicios**. Guardar los **datos de los
+posibles errores** en el fichero **errores.log**.
+```sh
+ricardo@profesor-HP-ProDesk-600-G2-SFF:/var/log$ mkdir /tmp/ejercicios/simbolicos
+ricardo@profesor-HP-ProDesk-600-G2-SFF:/var/log$ cp -s /tmp/ejercicios/* /tmp/ejercicios/simbolicos/ 2> /tmp/ejercicios/simbolicos/errores.log
+```
 7. ¿Como sabes que se han creado correctamente los enlaces?
-
-9. Copia todos los ficheros con dos caracteres que hay dentro de /bin a la carpeta llamada
+```sh
+ricardo@profesor-HP-ProDesk-600-G2-SFF:/var/log$ ls -l /tmp/ejercicios/simbolicos/
+```
+8. Copia todos los ficheros con dos caracteres que hay dentro de /bin a la carpeta llamada
 comandos (que debes crear dentro de ejercicios).
 
 9. Cambia tu directorio actual a /tmp/ejercicios.
