@@ -54,6 +54,36 @@
                 order: 3;
             }
         }
+        @media all and  (min-width: 450px){
+            .primero{
+                order: 0;
+            }
+
+            .segundo{
+               
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
+            }
+            .tercero{
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+        }
+        @media all and (min-width:600px){
+            .segundo{
+                flex-grow: 2;
+                justify-content: space-around;
+            }
+            .segundo,.tercero{
+                height: 300px; 
+                flex-basis: 0;
+            }
+            .tercero{
+                flex-grow: 1;
+            }
+        }
     </style>
 </head>
 <body>

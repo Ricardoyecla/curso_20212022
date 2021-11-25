@@ -6,25 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
         .rojo{
             color: red;
         }
         .verde{
             color:green;
         }
+        .tablero{
+            outline: 2px solid blue;
+            padding: 1em;
+            margin-top: 1em;   
+        }
+        main{
+            width: 80%;
+            margin: 3rem auto auto auto;
+        }
     </style>
 </head>
 <body>
-    <input id="nombre" type="text">
-    <button>Añadir</button>
-    <div class="tablero">
-
-    </div>
+    <main>
+        <input id="nombre" type="text">
+        <button>Añadir</button>
+        <div class="tablero">
+            <h1 class="tirada"></h1>
+            <h1 class="tirada"></h1>
+            <h1 class="tirada"></h1>
+            <h1 class="tirada"></h1>
+            <h1 class="tirada"></h1>
+        </div>
     <script>
         let nombre=document.getElementById('nombre');
         let boton=document.getElementsByTagName('button') ;
         let tablero=document.getElementsByClassName('tablero');
+        let tirada=document.getElementsByClassName('tirada');
         const palabras=["cosas","burro","pasta","helio","hiero"];
+        let posicion=0;
+        let oculta="cosas";
+        
 
         //Función que retorna una palabra, se le pasa un array y nos 
         //devuelve una palabra al azar.
@@ -72,18 +95,24 @@
       }
 
       function UnirInfo(palabra,array){
+          let cadena='';
+         
+          array=array.map(e=> e==0 ? 'negro' : e)
+          array=array.map(e=> e==1 ? 'rojo' : e)
+          array=array.map(e=> e==2 ? 'verde' : e)
 
+          for (let i in palabra){
+            cadena+=`<span class=${array[i]}>${palabra[i]}</span>`;
+          }
+          return cadena
       }
 
-
-        boton[0].addEventListener('click',()=>{
-            tablero[0].innerHTML=`<h1><span class="rojo">c</span>
-                <span >o</span>
-                <span class="verde">c</span>
-                </h1>`;
-        })
-
+      boton[0].addEventListener('click',()=>{
+            tirada[posicion++].innerHTML=UnirInfo(nombre.value,posiciones(oculta,nombre.value))
+      })
 
     </script>
+    </main>
+    
 </body>
 </html>
