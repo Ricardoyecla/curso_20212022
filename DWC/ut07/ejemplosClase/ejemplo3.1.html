@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .rojo{
+            color: red;
+        }
+        .verde{
+            color:green;
+        }
+        .tablero{
+            outline: 2px solid blue;
+            padding: 1em;
+            margin-top: 1em;   
+        }
+        main{
+            width: 80%;
+            margin: 3rem auto auto auto;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <input id="nombre" type="text">
+        <button>Añadir</button>
+        <div class="tablero">
+            <h1 class="tirada"></h1>
+            <h1 class="tirada"></h1>
+            <h1 class="tirada"></h1>
+            <h1 class="tirada"></h1>
+            <h1 class="tirada"></h1>
+        </div>
+    <script>
+        let nombre=document.getElementById('nombre');
+        let boton=document.getElementsByTagName('button') ;
+        let tablero=document.getElementsByClassName('tablero');
+        let tirada=document.getElementsByClassName('tirada');
+        const palabras=["cosas","burro","pasta","helio","hiero"];
+        let posicion=0;
+        let oculta="cosas";
+        
+
+        //Función que retorna una palabra, se le pasa un array y nos 
+        //devuelve una palabra al azar.
+
+        function dameUnaPalabra(lista){
+            return lista[parseInt(Math.random()*lista.length)]
+        }
+
+        //Hacer una función a la que le pasamos una palabra y una letra
+        //la función nos devolvera un array con 0's y 1's donde los unos
+        //Estarán en la posición donde coincida la letra en la palabra.
+        //ejemplo palabra cosas y letra s devolvera [0,0,1,0,1]
+
+        function arrayEsta(palabra,letra){
+            const array=[]
+            for(l of palabra)
+                if (l==letra)
+                    array.push(1)
+                else
+                    array.push(0)
+            return array;
+        }
+
+      //Hacer una función al que le pasemos dos palabras y retorna un array
+      //donde se comparan los elementos de la siguiente manera:
+      //si el elemento de la posición n en la primera palabra esta en la posición
+      //n de la segunda pondra en el array un 2 en la posición n.
+      //Si el elemento de la posición n en la primera palabra esta en alguna de la
+      //Segunda devolvera un 1 en el array en la posición n.
+      
+      
+      function posiciones(oculta,prueba){
+          console.log(oculta,prueba)
+          let solucion=['negro','negro','negro','negro','negro']
+            for(i in oculta){
+                if (oculta.includes(prueba[i]))
+                    solucion[i]='rojo'
+            }
+
+          for(i in oculta){
+            if (oculta[i]==prueba[i])
+                solucion[i]='verde'
+          } 
+          return solucion
+      }
+
+      function UnirInfo(palabra,array){
+          let cadena='';
+
+          for (let i in palabra){
+            cadena+=`<span class=${array[i]}>${palabra[i]}</span>`;
+          }
+          return cadena
+      }
+
+
+      boton[0].addEventListener('click',()=>{
+            tirada[posicion++].innerHTML=UnirInfo(nombre.value,posiciones(oculta,nombre.value))
+      })
+
+    </script>
+    </main>
+    
+</body>
+</html>
