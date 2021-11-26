@@ -10,7 +10,7 @@
             padding: 0;
             margin: 0;
             box-sizing: border-box;
-            outline: 1px solid yellow;
+            /* outline: 1px solid yellow; */
         }
         body{
             background-color: gainsboro;
@@ -18,12 +18,72 @@
         main{
             width: 80%;
             margin: 2em auto 2em ;
+            display: flex;
+            flex-wrap: wrap;
+            
         }
-       
-        div#titulo,img,div#formulario,footer{
+       #titulo h1{
+           text-align: center;
+           margin: 1rem;  
+       }
+       #titulo{
+        background-color: pink;
+
+       }
+       footer{
+        background-color: gray;
+       }
+       footer h2{
+            text-align: center;
+           margin: 1rem; 
+         
+       }
+        div#titulo,img,div#formulario,footer,label,input,header{
             width: 100%;
         }
-
+        img{
+            width: 100%;
+        }
+        .formulario div{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 1em;
+        }
+        input{
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+        @media all and (min-width: 415px){
+                label{
+                    flex-basis: 25%;
+                    text-align: right;
+                    color: red;
+                    padding-right: 1rem;
+                }
+                input{
+                    flex-basis: 75%;
+                }
+                .formulario div{
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+        }
+        @media all and (min-width: 768px){
+            label{
+                    flex-basis: 12%;
+                    text-align: right;
+                    color: red;
+                    padding-right: 1rem;
+                }
+                input{
+                    flex-basis: 37%;
+                }
+                .formulario div{
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+}
     </style>
 </head>
 <body>
@@ -32,7 +92,7 @@
             <img src="img/lago_y_casa.jpg" alt="">
         </header>
         <div id="titulo">
-            Cabañas y lagos
+            <h1>Cabañas y lagos</h1>
         </div>
         <div class="formulario">
             <div>
@@ -51,7 +111,8 @@
 
         </div>
         <footer>
-            Ricardo Muñoz Diaz
+            <h2> Ricardo Muñoz Diaz</h2>
+           
         </footer>
     </main>
 
