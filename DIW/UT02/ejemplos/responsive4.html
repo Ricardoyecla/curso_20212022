@@ -41,9 +41,7 @@
         div#titulo,img,div#formulario,footer,label,input,header{
             width: 100%;
         }
-        img{
-            width: 100%;
-        }
+       
         .formulario div{
             display: flex;
             flex-direction: row;
@@ -53,6 +51,12 @@
         input{
             margin-top: 0.5em;
             margin-bottom: 0.5em;
+        }
+        button{
+            align-self:center;
+        }
+        #centrar button{
+            margin: 0 auto;
         }
         @media all and (min-width: 415px){
                 label{
@@ -104,8 +108,9 @@
                 <input id='ciudad' type="text">
                 <label for="clave">clave</label>
                 <input id='clave' type="password">
+                
             </div>
-            <div>
+            <div id="centrar">
                 <button>Enviar</button>
             </div>
 
