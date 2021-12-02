@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            border: 1px solid black;
+            width: 3em;
+            height: 3em;
+        }
+        #marcador{
+            display: flex;
+            justify-content: space-around;
+        }
+        main{
+            width: 40%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        div{
+            width: 100%;
+            border: 1px solid;
+        }
+        img{
+            width: 100%;
+            border: 1px solid;
+        }
+        #controles{
+            display: flex;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="imagen">
+            <img src="img/1.png" alt="">
+        </div>
+        <div id="controles">
+            <label for="letra">Letra</label><input id="letra" type="text"><button>Probar</button>
+        </div>
+        <div id="marcador">
+
+        </div>
+    </main>
+
+    <script>
+        
+        let marcador=document.getElementById('marcador');
+        let letra=document.getElementById('letra');
+        let palabra="nava"
+        let arrayPalabra=[];
+        let letrasPulsadas=[];
+        let tirada=0;
+
+        function cuantas(palabra,letra){
+
+        }
+
+       function pintaCuadros(palabra,donde){
+
+            let cadena=""
+            arrayPalabra=[...palabra]
+            for(let e of palabra)
+                cadena=cadena+'<span> </span>'
+
+            donde.innerHTML=cadena
+       }
+
+       pintaCuadros(palabra,marcador)
+
+       document.getElementsByTagName('button')[0].addEventListener('click',()=>{
+            tirada++
+            if(cuantas(arrayPalabra,letra.value)>0){
+                 while (cuantas(arrayPalabra,letra.value)>0){
+                    let pos=PosicionLetraEnPalabra(arrayPalabra,letra)
+                    arrayPalabra[pos]="";
+                    pintarSpant(pos,letra.value)
+                 }
+           }else{
+                ahorcaUnPocoMas()
+           }
+           letrasPulsadas.push(letra.value)
+
+           if (tirada==5){
+               HasTerminado();
+               MenasajeHasPerdido()
+           }
+           if (EstaEnBlanco(arrayPalabra)){
+                HasTerminado();
+                MensajeDevictoria()
+           }
+       })
+    </script>
+</body>
+</html>

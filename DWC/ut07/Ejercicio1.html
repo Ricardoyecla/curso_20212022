@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>INtroduce los entereos separado copor comas</p>
+    <p><input id="cadena" type="text"><button id='cargar'>Cargar datos</button></p>
+    <p><button id="calcular">calcular</button><button id="borar">Borrar input</button></p>
+
+    <p id="suma"></p>
+    <p id="media"></p>
+    <p id="mayor"></p>
+    <p id="menor"></p>
+
+    <script>
+        let cadena=document.getElementById('nombre');
+        let cargar=document.getElementById('cargar')
+        let calcular=document.getElementById('calcular')
+        let borrar=document.getElementById('borrar')
+        let suma=document.getElementById('suma')
+        let media=document.getElementById('media')
+        let mayor=document.getElementById('mayor')
+        let menor=document.getElementById('menor')
+
+        cargar.addEventListener('click',()=>{
+            array=cadena.value.split(',')
+        })
+
+
+
+
+    </script>
+
+</body>
+</html>
