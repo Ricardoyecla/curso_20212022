@@ -11,11 +11,11 @@
             padding: 0;
             box-sizing: border-box;
         }
-        h1,a{
+        h1{
             color: hsl(0, 0%, 95%);
         }
        
-       p{
+       p,a{
            color: hsla(0, 0%, 100%, 0.75) ;
        }
        body{
@@ -24,11 +24,13 @@
         main{
             width: 90%;
             margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
         }
         #uno{
+            margin-top: 2em;
             border-radius: 8px 8px 0 0;
-            background-color: hsl(31, 77%, 52%) ;
-            
+            background-color: hsl(31, 77%, 52%) ; 
         }
         #dos{
             background-color:  hsl(184, 100%, 22%) ;
@@ -39,22 +41,48 @@
             border-radius: 0 0 8px 8px;
         }
 
-        div{
-            padding: 2rem;
+        #uno,#dos,#tres{
+            
+            width: 100%;
+            padding: 3rem;
             display: flex;
             flex-direction: column;
         }
         img{
             width: 20%;
-           
+        }
+        .boton,p,h1{
+            margin-top: 1em;
         }
         a{
             text-decoration: none;
         }
+        #uno span{
+            color:hsl(31, 77%, 52%);
+        }
+        #dos span{
+            color:hsl(184, 100%, 22%);
+        }
+        #tres span{
+            color:hsl(179, 100%, 13%);
+        }
         span{
-            border-radius: 25% ;
-            background-color: red;
-            padding: 1rem 2rem;
+            border-radius: 25px ;
+            background-color: hsl(0, 0%, 95%);
+            padding: 0.5rem 1rem;
+        }
+        @media all and (min-width:1000px){
+            #uno{
+                border-radius: 8px 0 0 8px;
+            }
+            #tres{
+                border-radius: 0 8px 8px 0;
+            }
+            #uno,#dos,#tres{
+                margin-top: 2em;
+                flex-basis: 0;
+                flex-grow: 1;
+            }
         }
     </style>
 </head>
@@ -67,7 +95,9 @@
                 Elija un sedán por su precio y excelente consumo. Es la forma 
                 ideal desplazarse en la ciudad o en su próximo viaje por carretera.
             </p>
-            <span><a href="">Leer más</a></span>
+            <div class='boton'>
+                <a href=""><span>Leer más</span></a>
+            </div>
         </div>
         <div id="dos">
             <img src="img/icon-suvs.svg" alt="">
@@ -77,7 +107,9 @@
                 Perfecto para sus próximas vacaciones familiares y de aventuras
                 por cualquier terreno. 
             </p>
-            <span><a href="">Leer más</a></span>
+            <div class='boton'>
+                <a href=""><span>Leer más</span></a>
+            </div>
          </div>
          <div id="tres">
             <img src="img/icon-luxury.svg" alt="">
@@ -87,10 +119,9 @@
                  Disfrute de la comodidad alquilando un vehículo de lujo y llegue
                  con estilo.
              </p>
-             <div>
+             <div class='boton'>
                  <a href=""><span>Leer más</span></a>
              </div>
-             
          </div>
     </main>
    

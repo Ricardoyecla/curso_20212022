@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 3</h1>
+    <p>Introduce los enteros separados por comas</p>
+    <p><input type="text" id="cadena"><button id="bcargar">Cargar Ejemplo</button></p>
+    <p><input type="number" id="valor"n placeholder="valor"><input type="number" id="indice" placeholder="indice">
+        <button id="binsertar">Insertar</button></p>
+    <p><button id="reiniciar">reiniciar</button></p>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    
+</body>
+<script>
+    let cadena=document.getElementById('cadena');
+    let bcargar=document.getElementById('bcargar');
+    let valor=document.getElementById('valor');
+    let indice=document.getElementById('indice');
+    let binsertar=document.getElementById('binsertar');
+    let reiniciar=document.getElementById('reiniciar')
+    let resultados=document.getElementsByTagName('li');
+    let array1=[];
+   
+    // function fCargar(texto){
+    //     return texto.split(',').map((x)=>parseInt(x))
+    // }
+
+    //Pasamos un texto con números separados por comas y devolvemos un array de números
+
+    function fCargar(texto){
+         return texto.split(',').map((x)=>parseInt(x))
+    }
+       
+    //Función que inserta un elemento en una posición desplazando al resto.
+    function finsertrar(array,el, pos){
+       let nuevo_array=[];
+        for(i=0;i<pos;i++)
+            nuevo_array.push(array[i])
+
+        nuevo_array.push(parseInt(el))
+        console.log(nuevo_array)
+
+       for(i=pos;i<array.length;i++)
+            nuevo_array.push(array[i])
+
+        console.log(nuevo_array)
+
+        return nuevo_array 
+    }
+    
+    //Cargamos la cadena en un array al pulsar el botón
+    bcargar.addEventListener('click',()=>{   
+       array1=fCargar(cadena.value)
+       console.log(array1)
+    })
+  
+
+    //Mostramos el array con las inserciones
+
+    binsertar.addEventListener('click',()=>{
+        array1=finsertrar(array1,valor.value,indice.value)
+        resultados[0].innerHTML=`La concatenación es ${array1}`
+        //console.log(fConcatenar(array1,array2))
+       
+    })
+
+
+</script>
+</html>

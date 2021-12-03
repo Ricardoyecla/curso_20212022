@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 1</h1>
+    <p>Introduce los enteros separados por comas</p>
+    <p><input type="text" id="cadena"><button id="cargar">Cargar Ejemplo</button></p>
+    <p><button id='Calcular'>Calcular</button><button id="reiniciar">reiniciar</button></p>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    
+</body>
+<script>
+    let cadena=document.getElementById('cadena');
+    let cargar=document.getElementById('cargar');
+    let calcular=document.getElementById('Calcular');
+    let reiniciar=document.getElementById('reiniciar')
+    let resultados=document.getElementsByTagName('li');
+    let array=[];
+
+    // function fCargar(texto){
+    //     return texto.split(',').map((x)=>parseInt(x))
+    // }
+
+    //Pasamos un texto con números separados por comas y devolvemos un array de números
+
+    function fCargar(texto){
+        let array=[];
+        for (e of texto.split(','))
+            array.push(parseInt(e))
+        return array
+    }
+       
+    
+    //Devuelve la suma de los números del  array
+    function fSumar(array){
+        let acum=0;
+        for (e of array)
+            acum+=e
+        return acum
+    }
+
+    
+
+    //Devuelve el mayor número del array
+     function fMax(array){
+        let mayor=array[0]
+        for(e of array)
+            mayor=(e>mayor) ? e : mayor
+        return mayor
+    } 
+   //Devuelve el menor número del array
+    function fMin(array){
+        let menor=array[0]
+        for(e of array)
+            menor=(e<menor) ? e : menor
+        return menor
+    }
+
+    //Devuelve la media del array de núemros
+    function fMedia(array){
+        return fSumar(array)/array.length
+    }
+
+    //Cargamos la cadena en un array al pulsar el botón
+    cargar.addEventListener('click',()=>{   
+       array=fCargar(cadena.value)
+       console.log(array)
+    })
+
+    //Mostramos los valores calculados al pulsar el botón.
+
+    calcular.addEventListener('click',()=>{
+        resultados[0].innerHTML=`La suma es ${fSumar(array)}`
+        resultados[1].innerHTML=`El máximo es ${fMax(array)}`
+        resultados[2].innerHTML=`El mínimo es ${fMin(array)}`
+        resultados[3].innerHTML=`La media es ${fMedia(array)}`
+    })
+
+
+</script>
+</html>

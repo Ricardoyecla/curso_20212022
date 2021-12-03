@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 1</h1>
+    <p>Introduce los enteros separados por comas</p>
+    <p><input type="text" id="cadena"><button id="cargar">Cargar Ejemplo</button></p>
+    <p><button id='mostrar'>Mostrar</button></p>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    
+</body>
+<script>
+    let cadena=document.getElementById('cadena');
+    let cargar=document.getElementById('cargar');
+    let mostrar=document.getElementById('mostrar');
+    let resultados=document.getElementsByTagName('li');
+    let array=[];
+    let conjunto =new Set()
+
+    // function fCargar(texto){
+    //     return texto.split(',').map((x)=>parseInt(x))
+    // }
+
+    //Pasamos un texto con números separados por comas y devolvemos un array de números
+
+    function fCargar(texto){
+        let array=[];
+        texto.split(',').forEach(e => {array.push(e)})
+        return array
+    }
+     
+    function elimnaRepes(array){
+        return new Set(array)
+    }
+    
+    function mayor(array){
+        return array.sort((x,y)=>x.length-y.length)[array.length-1]
+    }
+    function menor(array){
+        return array.sort((x,y)=>x.length-y.length)[0]
+    }
+    function mmedia(array){
+        return array.sort((x,y)=>x.length-y.length)[parseInt((array.length-1)/2)]
+    }
+
+
+    
+    //Cargamos la cadena en un array al pulsar el botón
+    cargar.addEventListener('click',()=>{   
+       array=fCargar(cadena.value)
+       console.log(array)
+    })
+
+    //Mostramos los valores calculados al pulsar el botón.
+
+    
+    mostrar.addEventListener('click',()=>{
+        resultados[0].innerHTML=`La es ${[... elimnaRepes(array)].reduce((todo,uno)=>todo+=uno+" ")}`
+       /*  resultados[1].innerHTML=`La mayor palabra es ${mayor(array)}`
+        resultados[2].innerHTML=`La menor palabra es ${menor(array)}`
+        resultados[3].innerHTML=`La media palabra es ${mmedia(array)}` */
+    })
+
+
+</script>
+</html>

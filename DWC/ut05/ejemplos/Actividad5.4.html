@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 3</h1>
+    <p>Introduce los enteros separados por comas</p>
+    <p><input type="text" id="cadena1"><button id="cargar1">Cargar Ejemplo</button></p>
+    <p><input type="text" id="cadena2"><button id="cargar2">Cargar Ejemplo</button></p>
+    <p><button id='concatenar'>Calcular</button><button id="reiniciar">reiniciar</button></p>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    
+</body>
+<script>
+    let cadena1=document.getElementById('cadena1');
+    let cargar1=document.getElementById('cargar1');
+    let cadena2=document.getElementById('cadena2');
+    let cargar2=document.getElementById('cargar2');
+    let concatenar=document.getElementById('concatenar');
+    let reiniciar=document.getElementById('reiniciar')
+    let resultados=document.getElementsByTagName('li');
+    let array1=[];
+    let array2=[];
+    // function fCargar(texto){
+    //     return texto.split(',').map((x)=>parseInt(x))
+    // }
+
+    //Pasamos un texto con números separados por comas y devolvemos un array de números
+
+    function fCargar(texto){
+         return texto.split(',').map((x)=>parseInt(x))
+    }
+       
+    //Cancatenamos las dos arrays pasado a la función
+    function fConcatenar(a1,a2){
+        let a=[]
+        for(i in a1){
+             a[i*2]=a1[i]
+        }
+        console.log(a)
+        for(i in a2)
+            a[(i*2)+1]=a2[i] 
+
+        a=a.filter(x=>x!=undefined)
+        console.log(a)
+        return a;
+    }
+    
+    //Cargamos la cadena en un array al pulsar el botón
+    cargar1.addEventListener('click',()=>{   
+       array1=fCargar(cadena1.value)
+       console.log(array1)
+    })
+    cargar2.addEventListener('click',()=>{   
+       array2=fCargar(cadena2.value)
+       console.log(array2)
+    })
+
+    //Mostramos los valores calculados al pulsar el botón.
+
+    concatenar.addEventListener('click',()=>{
+        resultados[0].innerHTML=`La concatenación es ${fConcatenar(array1,array2)}`
+        console.log(fConcatenar(array1,array2))
+       
+    })
+
+
+</script>
+</html>
