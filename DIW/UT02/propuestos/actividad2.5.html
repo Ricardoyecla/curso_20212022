@@ -14,6 +14,7 @@
         h1,a{
             color: hsl(0, 0%, 95%);
         }
+       
        p{
            color: hsla(0, 0%, 100%, 0.75) ;
        }
@@ -47,6 +48,14 @@
             width: 20%;
            
         }
+        a{
+            text-decoration: none;
+        }
+        span{
+            border-radius: 25% ;
+            background-color: red;
+            padding: 1rem 2rem;
+        }
     </style>
 </head>
 <body>
@@ -58,7 +67,7 @@
                 Elija un sedán por su precio y excelente consumo. Es la forma 
                 ideal desplazarse en la ciudad o en su próximo viaje por carretera.
             </p>
-            <a href="">Leer más</a>
+            <span><a href="">Leer más</a></span>
         </div>
         <div id="dos">
             <img src="img/icon-suvs.svg" alt="">
@@ -68,7 +77,7 @@
                 Perfecto para sus próximas vacaciones familiares y de aventuras
                 por cualquier terreno. 
             </p>
-            <a href="">Leer más</a>
+            <span><a href="">Leer más</a></span>
          </div>
          <div id="tres">
             <img src="img/icon-luxury.svg" alt="">
@@ -78,7 +87,10 @@
                  Disfrute de la comodidad alquilando un vehículo de lujo y llegue
                  con estilo.
              </p>
-             <a href="">Leer más</a> 
+             <div>
+                 <a href=""><span>Leer más</span></a>
+             </div>
+             
          </div>
     </main>
    
