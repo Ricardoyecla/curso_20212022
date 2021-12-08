@@ -41,6 +41,11 @@ ls /etc -l
 ls /etc -l | wc -l
 ```
 10. **Cuenta** cuantas entradas hay en el directorio /etc. Contando palabras.
-``bash
+```bash
 ls /etc -l | wc -w
 ```
+11. Muestra las 10 primeras entradas del directorio /etc
+
+12. Muestra las 6 últimas entradas del directorio /etc.
+
+13. Utilizando el comando more haz que al listar el contenido de /etc se detenga cada vez que se llene la pantalla.
