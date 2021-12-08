@@ -24,4 +24,23 @@ a12b
 ```bash
 ^[a-Z][0-9]*$
 ```
-6.
+6. El comando **ps aux** muestra toda la información de los proceso que se estan ejecutando en el sistema. Mostrar solo los procesos del **root** (los que las líneas empiezan por root)
+```bash
+ps aux | grep -E '^root'
+```
+7. Indica **el número** de procesos que tiene el usuario **root** (los debes de contar).
+```bash
+ps aux | grep -E '^root' | wc -l
+```
+8. Muestra las entradas del directorio /etc en formata largo.
+```bash
+ls /etc -l
+```
+9. **Cuenta** cuantas entradas hay en el directorio /etc. Contando líneas.
+```bash
+ls /etc -l | wc -l
+```
+10. **Cuenta** cuantas entradas hay en el directorio /etc. Contando palabras.
+``bash
+ls /etc -l | wc -w
+```
