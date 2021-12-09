@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Spartan;
+        }
+
+        body {
+            background: url('img/bg-pattern-top-mobile.svg') top center/100% no-repeat,
+                url('img/bg-pattern-bottom-mobile.svg') bottom center/100% no-repeat;
+
+        }
+
+        main,
+        header,
+        h1 {
+            background-color: hsla(0, 0%, 100%, 0);
+        }
+
+        main {
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 5em auto;
+        }
+
+        h1 {
+            color: hsl(300, 43%, 22%);
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        header,
+        #descripcion,
+        #valoracion {
+            width: 100%;
+        }
+
+        #valoracion>div {
+            margin: 1rem auto 0 auto;
+            background-color: hsl(300, 85%, 95%);
+            color: hsl(300, 43%, 22%);
+            border-radius: 5px;
+        }
+
+        #valoracion img {
+            width: 5%;
+        }
+
+        #valoracion div {
+            text-align: center;
+            padding: 0.3rem;
+        }
+
+        #descripcion p {
+            color: hsl(300, 43%, 22%);
+            text-align: center;
+            margin: 1rem auto 0 auto;
+        }
+
+        .cabecera {
+            display: flex;
+        }
+
+        #comentarios {
+            margin: 1rem auto 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .cabecera img {
+            border-radius: 50%;
+            width: 50%;
+        }
+
+        .cabecera .foto {
+            width: 30%;
+        }
+
+        .cabecera~p {
+            margin-top: 1rem;
+        }
+
+        .comentario {
+            padding: 1.5rem;
+            background-color: hsl(300, 43%, 22%);
+            margin-top: 1rem;
+            border-radius: 5px;
+        }
+
+        .comentario p,
+        .cliente p:nth-child(1) {
+            color: hsl(0, 0%, 100%);
+        }
+
+        .cliente p:nth-child(2) {
+            color: hsl(333, 80%, 67%);
+        }
+
+        @media all and (min-width:542px) {
+            body {
+                background: url('img/bg-pattern-top-desktop.svg') top center/100% no-repeat,
+                    url('img/bg-pattern-bottom-desktop.svg') bottom center/100% no-repeat;
+            }
+
+            #empresa,
+            #clientes {
+                display: flex;
+            }
+
+            #valoracion {
+                margin-left: 3em;
+            }
+
+            .cabecera img {
+                border-radius: 50%;
+                width: 35%;
+            }
+
+            .cabecera .foto {
+                width: 30%;
+            }
+
+        }
+
+
+        @media all and (min-width:942px) {
+            body {
+                background: url('img/bg-pattern-top-desktop.svg') top center/100% no-repeat,
+                    url('img/bg-pattern-bottom-desktop.svg') bottom center/100% no-repeat;
+            }
+
+            #empresa,
+            #clientes {
+                display: flex;
+            }
+
+            #valoracion {
+                margin-left: 3em;
+            }
+
+            .comentarios {
+                display: flex;
+            }
+
+            .comentario {
+                flex-basis: 0;
+                flex-grow: 1;
+                margin-left: 2em;
+            }
+
+            .comentario:first-child {
+                margin-left: 0;
+            }
+
+            #valoracion div:nth-child(1) {
+                margin-right: 4em;
+            }
+
+            #valoracion div:nth-child(2) {
+                margin-left: 2em;
+                margin-right: 2em;
+            }
+
+            #valoracion div:nth-child(3) {
+                margin-left: 4em;
+            }
+
+            div.comentario:nth-child(1) {
+                margin-top: 0em;
+            }
+
+            div.comentario:nth-child(2) {
+                margin-top: 2em;
+            }
+
+            div.comentario:nth-child(3) {
+                margin-top: 4em;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="empresa">
+            <header>
+                <h1>10.000+ clientes les gustan nuestro productos.</h1>
+                <div id='descripcion'>
+                    <p>
+                        Ofrecemos los mejores productos
+                        convinados con un excelente servicio
+                        al cliente. Vean las opiniones de
+                        nuestros clientes sobre su nivel de
+                        satisfacción en nuestro servicio.
+                    </p>
+                </div>
+            </header>
+
+            <div id="valoracion">
+                <div>
+                    <div class="estrellas">
+                        <img src="img/icon-star.svg" alt="">
+                        <img src="img/icon-star.svg" alt="">
+                        <img src="img/icon-star.svg" alt="">
+                        <img src="img/icon-star.svg" alt="">
+                        <img src="img/icon-star.svg" alt="">
+                    </div>
+                    <div>Lorem ipsum dolor sit amet.</div>
+                </div>
+                <div>
+                    <div class="estrellas">
+                        <img src="img/icon-star.svg" alt="">
+                        <img src="img/icon-star.svg" alt="">
+                        <img src="img/icon-star.svg" alt="">
+                        <img src="img/icon-star.svg" alt="">
+                        <img src="img/icon-star.svg" alt="">
+                    </div>
+                    <div>Lorem ipsum dolor sit amet.</div>
+                </div>
+
+                <div>
+                    <div class="estrellas">
+                        <img src="img/icon-star.svg" alt="">
+                        <img src="img/icon-star.svg" alt="">
+                        <img src="img/icon-star.svg" alt="">
+                        <img src="img/icon-star.svg" alt="">
+                        <img src="img/icon-star.svg" alt="">
+                    </div>
+                    <div>Lorem ipsum dolor sit amet.</div>
+                </div>
+            </div>
+        </div>
+        <div id="clientes">
+            <div id="comentarios">
+                <div class="comentario">
+                    <div class="cabecera">
+                        <div class="foto"><img src="img/image-colton.jpg" alt=""></div>
+                        <div class="cliente">
+                            <p>Colton</p>
+                            <p>Verified Buyer</p>
+                        </div>
+                    </div>
+                    <p> Necesitábamos el mismo diseño impreso que habíamos pedido una semana antes. No solo encontraron
+                        el pedido original, sino que también lo recibimos a tiempo. ¡excelente!</p>
+                </div>
+                <div class="comentario">
+                    <div class="cabecera">
+                        <div class="foto"><img src="img/image-anne.jpg" alt=""></div>
+                        <div class="cliente">
+                            <p>Anne</p>
+                            <p>Comprador verificado</p>
+                        </div>
+                    </div>
+                    <p>
+                        El servicio al cliente es siempre excelente y muy rápido. completamente encantado con la
+                        sencillez de la compra y la rapidez de entrega
+                    </p>
+                </div>
+                <div class="comentario">
+                    <div class="cabecera">
+                        <div class="foto"><img src="img/image-irene.jpg" alt=""></div>
+                        <div class="cliente">
+                            <p>irene</p>
+                            <p>Comprador verificado</p>
+                        </div>
+                    </div>
+                    <p>
+                        Haga un pedido con esta empresa y no podrá mas que  elogiarlos por la calidad del servicio. 
+                        ¡Definitivamente lo usaré de nuevo y lo recomendaré a todo el mundo!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>

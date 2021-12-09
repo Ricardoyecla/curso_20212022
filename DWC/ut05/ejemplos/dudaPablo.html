@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array=['hola','yo','soy']
+
+        function media(array){
+            let suma=array.reduce((a,b)=>a+b.length,0);
+            
+            return suma/array.length
+        }
+
+        //Que hace reduce (a,b) los valores de las variables son los siguientes:
+        // la primera vez a:0 y     b:'hola'    =>  b.length:4  devuelve 0+4=4
+        // la segunda vez a:4 y     b:'yo'      =>  b.length:2  devuelve 4+2=6
+        // la tercera vez a:6 y     b:'soy'     =>  b.length:3  devuelve 6+3=9
+        // reduce devuelve 9
+
+        console.log(media(array))
+    </script>
+</body>
+</html>
