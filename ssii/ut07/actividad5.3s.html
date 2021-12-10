@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        main{
+            padding: 3rem;
+        }
+        .introducir{
+            padding: 1rem 0 1rem   0;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+        }
+        .introducir label{
+            margin-right: 1rem;
+            flex-grow: 1;
+        }
+        .introducir input{
+            flex-grow: 20;
+        }
+        #boton{
+            margin-left: 5px;
+            background-color: cadetblue;
+            outline:2px solid rgb(3, 44, 44);
+            padding: 0.5rem;
+            border-radius: 5px;
+        }
+        .rojo{
+            color: red;
+        }
+        .azul{
+            color:blue
+        }
+        .resultado{
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Comprobador de expresiones regulares</h1>
+        <div class="introducir">
+            <label for="">Líneas y/o palabras</label>
+            <input id='texto' type="text" placeholder="Introduce las líneas y/o plabras separado por ;">
+        </div>
+        <div class="introducir">
+            <label for="">Introduce la expresión regular a comprobar</label>
+            <input id='expReg' type="text" placeholder="Introduce la expresión regular a comprobar">
+        </div>
+        <div class="resultado">
+
+        </div>    
+        <span id="boton">Comprobar</span>
+    </main>
+</body>
+    <script>
+        let input_Texto=document.getElementById('texto');
+        let input_ExpReg=document.getElementById('expReg');
+        let texto_resultado=document.getElementsByClassName('resultado')
+
+       
+
+        function cumpleExpresion(expReg,cadena){
+            return expReg.test(cadena)
+        }
+
+        function añadirEntrada(cadena,valor){ 
+            texto_resultado[0].innerHTML+=valor ? `<p class='azul'>${cadena}</p>` :`<p class='rojo'>${cadena}</p>`;
+        }
+
+
+
+        document.getElementById('boton').addEventListener('click',()=>{
+            let array_datos=input_Texto.value.split(';')
+            let eR=new RegExp(input_ExpReg.value);
+
+            texto_resultado[0].innerHTML+=`Para la expresión <span class='azul'>${input_ExpReg.value}</span> la complen:`
+        //    array_datos.forEach(e => {
+        //         añadirEntrada(e,cumpleExpresion(eR,e))
+        //    });
+
+           array_datos.map(e => añadirEntrada(e,cumpleExpresion(eR,e)))
+        })
+    </script>
+</html>
