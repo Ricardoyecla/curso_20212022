@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .azul {
+            color: blue;
+        }
+
+        .red {
+            color: red;
+           
+        }
+        .grande{
+            font-size: x-large;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1>Ilegales</h1>
+    <pre id="ilegales" class='red grande'>
+        Hay un tipo dentro del espejo
+        Que me mira con cara de <strong>conejo</strong>
+        Oye tú, tú que me miras
+        Es que quieres servirme de comida?
+    </pre>
+    <h1>Los secretos</h1>
+    <pre class="secretos">
+        Nunca he sentido igual una <strong>derrota</strong>
+        Que cuando ella me dijo se acabó
+        Nunca creí tener mi vida rota
+        Ahora estoy solo y arrastro mi dolor.
+    </pre>
+    <button>Borde</button>
+    <script>
+        console.log(document.getElementById('ilegales').innerHTML)
+        document.getElementById('ilegales').innerHTML+='<p class="red">fin</p>'
+        console.log(document.getElementById('ilegales').innerHTML)
+
+        console.log(document.querySelectorAll('.secretos')[0].textContent)
+        document.querySelectorAll('.secretos')[0].textContent+='<p class="red">fin</p>'
+        console.log(document.querySelectorAll('.secretos')[0].textContent)
+
+        // Modificadores CSS
+
+        let preIlegales=document.getElementById('ilegales')
+
+        document.querySelector('button').addEventListener('click',()=>{
+           preIlegales.style.border='2px solid pink'; 
+           preIlegales.style.backgroundColor="#CCC";
+           preIlegales.style['background-color']="#8CC";
+        })
+
+
+        //Manipuladores de clases CSS
+        //Consoultar una clase
+
+        let elPre=document.getElementById('ilegales')
+        console.log(elPre.className)
+
+        for(clase of elPre.classList)
+            console.log(clase)
+
+        //Eliminar una clase en una etiquita.
+
+        elPre.classList.remove('red');
+
+        //Añadir una clase en una etiqueta
+        elPre.classList.add('azul');
+
+        //Poner,quitar. una clase 
+
+        elPre.classList.toggle('azul');
+
+        //Preguntar si un elemnto tiene una clase.
+
+        console.log(elPre.classList.contains('grade'))
+        //Cambiar una clase por otra.
+
+        elPre.repal
+
+
+    </script>
+</body>
+
+</html>
