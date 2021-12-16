@@ -18,6 +18,8 @@
     <h1 class='verde' id='texto'>HOla</h1>
     <script>
         let color_inicial=true
+        let cont=0;
+
         function color(c){
             let h1=document.getElementById('texto')
             c ? h1.classList.replace('rojo','verde') : h1.classList.replace('verde','rojo')
@@ -29,7 +31,7 @@
         var alarma=setInterval(()=>{
             color_inicial=!color_inicial
             color(color_inicial)
-            cambiarTexto(color_inicial)
+            cambiarTexto(cont++)
         },2000)
     </script>
 </body>
