@@ -51,5 +51,75 @@ var resultado = elemento.hasAttribute(nombre);
 
 ### Ejemplo
 ```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .verdura{
+            color:green;
+        }
+        .carne{
+            color:red;
+        }
+        .hidrato{
+            color:yellow
+        }
+    </style>
+</head>
+<body>
+   <section id="s1">
+       <h1>Titulo</h1>
+       <p id="i1">Su casa bordeando la autopista
+        Hizo que ella creciera muy deprisa</p>
+   </section>
+   <section id="s2">
+       <p>No quise conocerla de aquel modo
+        Si quieres comprar algo, tengo todo</p>
+   </section>
+   <ul>
+       <li class="verdura">Tomate</li>
+       <li class="carne">tofu</li>
+       <li class="hidrato">Lenchuga</li>
+       <li class="verdura">lechuga</li>
+       <li class="carne">perrito caliente</li>
+       <li class="hidrato">arroz</li>
+   </ul>
+   <button>Mostrar</button><button>Eliminar</button><button>Añadir</button>
+   <button>Alternar</button>
+   <script>
+    
+        let boton=document.getElementsByTagName('button');
+        let lis=document.getElementsByTagName('li');
 
+        //Mostrar por consola li el valor de su atributo class
+        boton[0].addEventListener('click',()=>{
+           for(li of lis){
+               console.log(li.getAttribute('class'))
+           }
+        })
+     //Eliminamos para todos los li su atributo class
+        boton[1].addEventListener('click',()=>{
+           for(li of lis){
+              li.removeAttribute('class')
+           }
+        })
+     //Establecemos el valor del atributo class a carne en todos los li
+        boton[2].addEventListener('click',()=>{
+           for(li of lis){
+              li.setAttribute('class','carne')
+           }
+        })
+     //Alternamos el valor del atributo disesabled de un botón.
+        boton[3].addEventListener('click',()=>{
+           boton[2].toggleAttribute('disabled')
+           
+        })
+
+   </script>
+</body>
+</html>
 ```
