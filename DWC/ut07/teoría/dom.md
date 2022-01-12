@@ -61,3 +61,19 @@ Devuelve el nombre del nodo actual, en forma de cadena. Es un atributo de solo-l
 | Element	| igual que Element.tagName| 
 | Text	| "#text"| 
 
+### element.nodeType
+
+La propiedad de solo lectura Node.nodeType retornará un valor positivo entero representando el tipo de nodo.
+
+| Name | Value | 
+| ---- | :---: | 
+| ELEMENT_NODE	| 1| 
+| ATTRIBUTE_NODE | 	2| 
+| TEXT_NODE	| 3| 
+| CDATA_SECTION_NODE | 	4| 
+| ENTITY_REFERENCE_NODE 	| 5| 
+| ENTITY_NODE 	| 6
+| PROCESSING_INSTRUCTION_NODE	| 7
+| COMMENT_NODE	| 8
+| DOCUMENT_NODE	| 9
+
