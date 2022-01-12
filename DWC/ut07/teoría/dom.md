@@ -49,5 +49,15 @@ La representación de un documento HTML se hace con el arbol DOM donde cada elem
 - **Comentarios**: Comentarios 
 - **otros**: Elementos como los que aparecen dentro de **header** de los documentos HTML tambien generan nodos.
 
+### element.nodeName
 
+Devuelve el nombre del nodo actual, en forma de cadena. Es un atributo de solo-lectura.
+
+| Interfaz | nodeName| 
+| -------- | ------- | 
+| Attr	| igual que Attr.name | 
+| Comment |	"#comment"| 
+| Document |	"#document"| 
+| Element	| igual que Element.tagName| 
+| Text	| "#text"| 
 
