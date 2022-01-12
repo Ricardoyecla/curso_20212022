@@ -79,6 +79,7 @@ La propiedad de solo lectura Node.nodeType retornará un valor positivo entero r
 
 ### Ejemplo de uso de nodeType y nodeName
 **curso_20212022/DWC/ut07/ejemplosClase/tipos_de_nodos.html**
+[tipos_de_nodos.html](../ejemplosClase/tipos_de_nodos.html)
 ```html
 <!DOCTYPE html>
 <html lang="en">
