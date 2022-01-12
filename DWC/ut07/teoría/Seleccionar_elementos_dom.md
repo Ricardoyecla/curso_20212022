@@ -84,11 +84,18 @@ elements = document.getElementsByTagName(name)
 **HTML**
 
 ```html
-
+<p>An unordered list:</p>
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+<p id="demo"></p>
 ```
 **JavaScript**
 ```javascript
-
+let x = document.getElementsByTagName("LI");
+document.getElementById("demo").innerHTML = x[1].innerHTML;
 ```
 ## Selector por atributo clase de la etiqueta getElementsByClassName().
 Retorna un objecto **HTMLCollection** de los elementos hijos que tengan todos los nombres de clase indicados. Cuando es llamado sobre el objeto document , la busqueda se realiza en todo el document, incluido el nodo raíz. También puedes llamar getElementsByClassName() sobre cualquier elemento; en ese caso retornara sólo los elementos hijos del elemento raíz indicado que contengan los nombres de clase indicados.
@@ -102,11 +109,21 @@ var elementos = elementoRaiz.getElementsByClassName(nombres);
 **HTML**
 
 ```html
-
+<ul id="menu">
+   <li class="item">HTML</li>
+   <li class="item">CSS</li>
+   <li class="item highlight">JavaScript</li>
+   <li class="item">TypeScript</li>
+</ul>
 ```
 **JavaScript**
 ```javascript
-
+let menu = document.getElementById('menu');
+let items = menu.getElementsByClassName('item');
+for(e of items){
+  console.log(e.innerHTML);
+}
+console.log(items[1].innerHTML);
 ```
 ## Selector por atributo identificador de la etiqueta getElementById().
 Devuelve una referencia al elemento por su ID.
@@ -121,9 +138,16 @@ elemento = document.getElementById(id);
 **HTML**
 
 ```html
-
+<p>An unordered list:</p>
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+<p id="demo"></p>
 ```
 **JavaScript**
 ```javascript
-
+let x = document.getElementsByTagName("LI");
+document.getElementById("demo").innerHTML = x[1].innerHTML;
 ```
