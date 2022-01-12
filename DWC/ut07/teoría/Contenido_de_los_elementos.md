@@ -40,7 +40,8 @@ Por esa razón, cuando solo tratamos con texto, es recomendable no usar innerHTM
         Nunca creí tener mi vida rota
         Ahora estoy solo y arrastro mi dolor.
     </pre>
-  
+  ```
+  ```javascript
   console.log(document.getElementById('ilegales').innerHTML)
   document.getElementById('ilegales').innerHTML+='<p class="red">fin</p>'
   console.log(document.getElementById('ilegales').innerHTML)
