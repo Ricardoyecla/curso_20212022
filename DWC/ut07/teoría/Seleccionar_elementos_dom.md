@@ -7,6 +7,14 @@ La otra forma es utilizar selectores de elementos, entre los que tenemos los sig
 4. Selector **CSS querySelector().**
 5. Selector **CSS querySelectorAll().**
 
+Algunos de estos selectores no van a devolver un NodeList, que no es exactamente un array de elementos nodo, podemos utilizar los corchetes para indicar un único elemento, tenemos las propiedad **length**, pero otros métetodos no estan como sort, join o slice.
+
+No es mucho problema podemos ya que podemos pasar de NodeList a array de forma sencilla.
+```javascript
+let ElementosArrays=[...ElementosNodeList]
+
+let ElementosArrays=Array.from(ElementosNodeList)
+```
 ## Selector CSS querySelector().
 
 **Devuelve la primera coincidencia** del (elemento) Element nodo dentro de las subramas del nodo. Sino se encuentra un nodo coincidente, se devuelve null .
