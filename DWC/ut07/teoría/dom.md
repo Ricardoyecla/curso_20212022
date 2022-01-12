@@ -77,3 +77,40 @@ La propiedad de solo lectura Node.nodeType retornará un valor positivo entero r
 | COMMENT_NODE	| 8
 | DOCUMENT_NODE	| 9
 
+### Ejemplo de uso de nodeType y nodeName
+**curso_20212022/DWC/ut07/ejemplosClase/tipos_de_nodos.html**
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Canción
+   <section id="s1">
+       <h1>Titulo</h1>
+       <p id="i1">Su casa bordeando la autopista
+        Hizo que ella creciera muy deprisa</p>
+   </section>
+   Texto
+   <section id="s2">
+       <p>No quise conocerla de aquel modo
+        Si quieres comprar algo, tengo todo</p>
+   </section>
+
+   <button>
+       aquí
+   </button>
+   <script>
+      console.log(`El nodo con id='s1' es de tipo ${document.getElementById('s1').nodeType}`)
+      console.log(`El nombre del nodo con id='s1'es ${document.getElementById('s1').nodeName}`)
+
+      for (let e of document.querySelector('body').childNodes)
+        console.log(`Nombre nodo:${e.nodeName} Tipo nodo ${e.nodeType} Valor del nodo: ${e.nodeValue}` )
+   </script>
+</body>
+</html>
+```
