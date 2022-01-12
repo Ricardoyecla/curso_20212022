@@ -59,11 +59,17 @@ elementList = parentNode.querySelectorAll(selectors);
 **HTML**
 
 ```html
-
+<h2 class="example">A heading with class="example"</h2>
+<p class="example">A paragraph with class="example".</p> 
+<p>Click the button to add a background color to the first element in the document with class="example" (index 0).</p>
+<p><strong>Note:</strong> The querySelectorAll() method is not supported in Internet Explorer 8 and earlier versions.</p>
 ```
 **JavaScript**
 ```javascript
-
+let ejemplo = document.querySelectorAll(".example");
+for (let e of ejemplo)
+  e.style.backgroundColor = "red";
+ejemplo[0].style.color=yellow;
 ```
 ## Selector por nombre de etiqueta getElementsByTagName().
 Devuelve una lista de elementos con un nombre determinado. Se busca en todo el documento, incluyendo el nodo raíz.
