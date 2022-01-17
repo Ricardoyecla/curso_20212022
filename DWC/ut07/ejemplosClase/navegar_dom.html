@@ -22,8 +22,9 @@
         for(let nodo of cancion.children)
             console.log(`Texto: ${nodo.nodeValue} Tipo: ${nodo.nodeType} Nombre: ${nodo.nodeName}**`)
 
-        document.write(l1.nextElementSibling.innerHTML)
-        document.write(l1.parentNode.innerHTML)
+        document.write(`l1.nextElementSibling.innerHTML:${l1.nextElementSibling.innerHTML}<br>`)
+        document.write(`l1.nextSibling.innerHTML:${l1.nextSibling.nodeValue}<br>`)
+        document.write(`l1.parentNode.innerHTML:${l1.parentNode.innerHTML}`)
     </script>
 </body>
 </html>
