@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>nombre cookie</p>
+    <p><input type="text" id="nCookie"></p>
+    <p>Valor Cookie</p>
+    <p><input type="text" id="vCookie"></p>
+    <p>
+        <button id="estCookie">Establecer</button>
+        <button id="mosCookie">Mostrar</button>
+    </p>
+    <script>
+        let nombreCookie=document.getElementById('nCookie');
+        let valorCookie=document.getElementById('vCookie');
+
+        let bEstablecer=document.getElementById('estCookie');
+        let bMostrar=document.getElementById('mosCookie');
+
+        bEstablecer.addEventListener('click',()=>{
+            let unMinutoGMT= new Date(new Date().getTime()+20*1000)
+            //document.cookie=`${nombreCookie.value}=${valorCookie.value};max-age=20`
+            document.cookie=`${nombreCookie.value}=${valorCookie.value};expires=${unMinutoGMT}`
+            alert(unMinutoGMT + ' ' + new Date(new Date().getTime()))
+        })
+
+        bMostrar.addEventListener('click',()=>{
+            alert(document.cookie)
+        })
+
+    </script>
+</body>
+</html>

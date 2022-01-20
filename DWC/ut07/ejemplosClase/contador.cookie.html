@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Has entrado <span id="contador">0</span></h1>
+    <p>Color de fondo</p>
+    <p><input type="text" id="vCookie"></p>
+    <p>
+        <button id="estCookie">Establecer fondo</button>
+        <button id="mosCookie">Mostrar</button>
+    </p>
+    <script>
+        let valorCookie = document.getElementById('vCookie');
+
+        let bEstablecer = document.getElementById('estCookie');
+        let bMostrar = document.getElementById('mosCookie');
+
+        bEstablecer.addEventListener('click', () => {
+            document.cookie = `fondo=${valorCookie.value}`
+            document.body.style.backgroundColor=valorCookie.value;
+        })
+
+        bMostrar.addEventListener('click', () => {
+            alert(document.cookie)
+            alert(sacarVisitas())
+        })
+
+        if (estaLaCookie(/fondo=[a-z]+/)) {
+            document.body.style.backgroundColor=sacarColor() 
+        }
+
+        if (!estaLaCookie(/visitas=[0-9]+/)) {
+            alert('no hay cookie')
+            document.cookie = 'visitas=1'
+        } else {
+            let valor_nuevo = parseInt(sacarVisitas()) + 1;
+            //alert(parseInt(valor_nuevo));
+            document.cookie = `visitas=${valor_nuevo}`;
+            document.getElementById('contador').textContent = valor_nuevo;
+        }
+        function sacarColor(){
+            let expr=/(fondo=)([a-z]+)/
+            return expr.exec(document.cookie)[2]
+        }
+        function sacarVisitas(){
+            let expr = /(visitas=)([0-9]+)/
+            let res=expr.exec(document.cookie)[2]
+            return res
+        }
+        //expr es una expresión para dterminar si esta esa cadena como 
+        //cookie
+        function estaLaCookie(expr) {
+            //let expr = /visitas=[0-9]+/
+            return expr.test(document.cookie)
+        }
+
+    </script>
+</body>
+
+</html>
