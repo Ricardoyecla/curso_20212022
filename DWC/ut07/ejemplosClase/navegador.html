@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="motor">Datos de tu navegador</p>
+    <button id="datosMotor">Mostar datos de tu navegador</button>
+    <button id="recargar">Reee</button>
+    <script>
+        let pMotor=document.getElementById('motor')
+        let bMotor=document.getElementById('datosMotor');
+
+
+        document.getElementById('recargar').addEventListener('click',()=>{
+            //location.reload()
+            history.go(-(history.length-1))
+        })
+        bMotor.addEventListener('click',()=>{
+            let lista_plugins;
+            
+            console.log(screen.orientation)
+            
+            for (plugin of navigator.plugins){
+                lista_plugins+=plugin.name +' '
+               
+            }
+                
+            //location='https://www.google.es'
+           
+            pMotor.textContent=location.protocol+ ' '+location.host;
+        })
+
+    </script>
+</body>
+</html>
