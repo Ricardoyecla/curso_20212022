@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="h4 bg-primary p-1 text-center">
+                    Lanzar Eventos
+                </p>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button id="botonC" class="btn btn-warning btn-block text-center ">Coloreo de amarillo</button>
+                <button id="botonA" class="btn btn-secondary btn-block text-center ">Hago como el C</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        
+        document.getElementById('botonA').addEventListener('click',aceptar);
+        document.getElementById('botonC').addEventListener('click',colorear)
+
+        function colorear(){
+            document.getElementsByTagName('p')[0].classList.remove('bg-primary');
+            document.getElementsByTagName('p')[0].classList.add('bg-warning');
+        }
+       
+        function aceptar(){
+            let e1=new Event('click');
+            document.getElementById('botonC').dispatchEvent(e1);
+        }
+
+    </script>
+</body>
+</html>

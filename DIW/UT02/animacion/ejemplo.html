@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        @keyframes cc{
+            from{
+                font-size: 1em;
+                color: black;
+            }
+            25%{
+                font-size: 1.5em; 
+                color: rgb(122, 203, 223);
+            }
+            50%{
+                font-size: 2em;
+                color: rgb(69, 118, 182);
+            }
+            75%{
+                font-size: 1.5em;
+                color: rgb(122, 203, 223);
+            }
+            to{
+                font-size: 1em;
+                color: black; 
+            }
+
+        }
+        div:hover{
+            animation: cc 4s infinite ease;
+        }
+        div{
+            width: 50%;
+            border: 1px solid;
+            padding: 1rem;
+            margin: 2rem;
+            margin-top: 2em;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>ejemplo de animación simple</div>
+</body>
+</html>
