@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Funcion construtora
+        function botellas(capacidad, material = 'cristal', contenido = 0) {
+            this.capacidad = capacidad;
+            this.contenido = contenido;
+            this.material = material;
+            this.llenar = (cantidad = 'lleno') => {
+                let contenido_viejo=this.contenido;
+                if ((cantidad == 'lleno') || (this.contenido + cantidad > this.capacidad))
+                    this.contenido = this.capacidad;
+                else
+                    this.contenido += cantidad;
+
+                return this.contenido-contenido_viejo;
+            }
+
+
+            this.vaciar = (cantidad = 'todo') => {
+                if ((cantidad == 'todo') || (this.contenido - cantidad < 0))
+                    this.contenido = 0;
+                else
+                    this.contenido -= cantidad;
+
+            }
+        }
+
+
+        //botella de vino hereda de botella
+
+        function botellas_vino(capacidad, graduacion, material = 'cristal', contenido = 0){
+            this.__proto__=new botellas(capacidad,material,contenido);
+            this.graduacion=graduacion;
+            this.tipo=()=>this.graduacion > 10 ? 'espirituosa' : 'otro';
+        }
+
+        let bv=new botellas_vino(100,15.3,'plastico');
+        console.log(`${bv.material} ${bv.contenido} ${bv.capacidad} ${bv.graduacion}`)
+        console.log(bv.tipo());
+
+        let b1litro = new botellas(100, 'plastico');
+        let b1cl = new botellas('200')
+
+
+        b1litro.llenar(20);
+        b1litro.llenar(12);
+
+        b1litro.vaciar(10);
+        b1litro.vaciar();
+
+
+        console.log(`${b1litro.contenido} cl de ${b1litro.capacidad} cl`)
+        console.log(`${b1cl.material} ${b1cl.contenido} ${b1cl.capacidad}`)
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

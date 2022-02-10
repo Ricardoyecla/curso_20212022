@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin-left: auto;
+            margin-right: auto; 
+        }
+       #cuadroGrande{
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+            margin-top: 3rem;
+            padding: 5rem;
+       }
+       #cuadroPeque{
+            width: 150px;
+            height: 200px;
+            background-color: wheat;    
+            padding: 1rem;
+       }
+       #cuadroLite{
+        width: 75px;
+            height: 100px;
+            background-color: lightblue;
+       }
+    </style>
+</head>
+<body>
+    <div id="cuadroGrande">
+        <div id="cuadroPeque">
+            <div id="cuadroLite">
+                hola
+            </div>
+        </div>
+    </div>
+    <script>
+        let CG=document.getElementById('cuadroGrande');
+        let CP=document.getElementById('cuadroPeque');
+        let CL=document.getElementById('cuadroLite');
+
+
+        CG.addEventListener('click',(e)=>{
+            console.log('Soy el Cuadro grande')
+        });
+        CP.addEventListener('click',(e)=>{
+            console.log('Soy el Cuadro peque')
+        });
+        CL.addEventListener('click',(e)=>{
+            console.log('Soy el Cuadro lite')
+            e.stopPropagation();
+        });
+
+
+    </script>
+</body>
+</html>

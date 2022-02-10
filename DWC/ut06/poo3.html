@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //funcion constructora
+
+        function poligono_regular(lados,nombre){
+            id="33";
+            this.lados=lados;
+            this.nombre=nombre;
+            this.mostrarInfo=()=>{
+                return `Hola soy un ${this.nombre} y tengo ${this.lados} lados\n`;
+            }
+        }
+
+        let c=new poligono_regular(4,'cuadrado');
+        let t=new poligono_regular(3,'Triaculo');
+
+        console.log(t.mostrarInfo()+'  '+c.mostrarInfo())
+
+        //Herencia
+
+        poligono_regular.prototype.Angulo_Interior=()=>{
+            return 180*(this.lados-2)/this.lados
+        }
+
+        console.log(t.Angulo_Interior())
+
+    </script>
+</body>
+</html>
