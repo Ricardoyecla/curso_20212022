@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Array.prototype.media=function(){
+            let suma=this.reduce((a,v)=>a+v,0);
+
+            return suma/this.length
+        }
+        Array.prototype.ultimo=function(){
+            return this[this.length-1]
+        }
+        Array.prototype.autor='Ricardo';
+
+        let notas=[1,2,3,4,5];
+        
+        notas.autor="JoseLuis";
+        console.log(notas.media())
+        console.log(notas.ultimo())
+        console.log(notas.autor)
+        
+
+    </script>
+</body>
+</html>
