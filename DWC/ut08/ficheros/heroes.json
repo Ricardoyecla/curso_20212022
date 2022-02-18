@@ -1,0 +1,10 @@
+{"superheroes":[
+    {
+        "nombre": "Thor",
+        "arma": "matillo"
+    },
+    {
+        "nombre": "Capitan",
+        "arma": ["escudo","coche"]
+    }
+]}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #contenido{
+            height: 15rem;
+            width: 15rem;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="fichero" name="files[]" multiple>
+    <div>
+        <ul id="lista"></ul>
+    </div>
+    <div id="contenido">Arrastra aquí :))</div>
+    <img id='imagen' src="" alt="">
+    <div id="texto"></div>
+    <script>
+        let $fichero=document.getElementById('fichero');
+        let $padre=document.getElementById('lista');
+        let $ZonaArrastre=document.getElementById('contenido')
+        let $texto=document.getElementById('texto')
+
+        function MostraInfoFicheros(e){
+            let ficheros=e.target.files;
+           
+            e.stopPropagation();
+            e.preventDefault();
+            for(let f of ficheros){
+                let $hijo=document.createElement('li');
+                $hijo.innerHTML=`<strong>${f.name} ${f.type} ${f.lastModifiedDate}</strong>`;
+                $hijo.addEventListener('click',(e)=>{
+                   leerImagen(f)
+                })
+                $padre.appendChild($hijo);
+            }
+        }
+        function leerF(fichero){
+            let reader=new FileReader();
+
+            reader.addEventListener('load',(e)=>{
+                var texto=e.target.result;  
+               // $texto.textContent=texto;
+               let heroes=JSON.parse(texto);
+               $texto.textContent=heroes.superherores[0].nombre;
+            })
+            reader.readAsText(fichero)
+        }
+
+        function leerImagen(fichero){
+            let reader=new FileReader();
+
+            reader.addEventListener('load',(e)=>{
+                let $imagen=document.getElementById('imagen');
+                let dataURL=reader.result;
+
+                $imagen.src=dataURL;
+            })
+
+            reader.readAsDataURL(fichero);
+        }
+
+        function MostraInfoFicherosDrop(e){
+            let ficheros=e.dataTransfer.files;
+           
+            e.stopPropagation();
+            e.preventDefault();
+            for(let f of ficheros){
+                let $hijo=document.createElement('li');
+                $hijo.innerHTML=`<strong>${f.name} ${f.size} ${f.lastModified}</strong>`;
+                $hijo.addEventListener('click',(e)=>{
+                   leerF(f)
+                })
+                $padre.appendChild($hijo);
+            }
+        }
+        $fichero.addEventListener('change',MostraInfoFicheros)
+        $ZonaArrastre.addEventListener('dragover',(e)=>{
+            //alert('estas aquí')
+            e.stopPropagation();
+            e.preventDefault();
+            e.dataTransfer.dropEffect='link';
+        })
+        $ZonaArrastre.addEventListener('drop',MostraInfoFicherosDrop)
+
+    </script>
+</body>
+</html>
