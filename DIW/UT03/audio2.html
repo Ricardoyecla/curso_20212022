@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="play">inicio</button>
+      <button id="uno">La primera</button>
+      <button id="dos">La segunda</button>
+    <script>
+        let cancion=new Audio();
+        
+        document.getElementById('play').addEventListener('click',()=>{
+            cancion.play()
+        } )
+        document.getElementById('uno').addEventListener('click',()=>{
+            cancion.src='./ejemplos/sonidos/IZAL.mp3'
+            cancion.play();
+        })
+        document.getElementById('dos').addEventListener('click',()=>{
+            cancion.src='./ejemplos/sonidos/The.mp3'
+            cancion.play();
+        })
+       
+        </script>
+</body>
+</html>
