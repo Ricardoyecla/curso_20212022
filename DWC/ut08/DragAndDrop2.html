@@ -10,7 +10,7 @@
         .contenedor {
             border: 2px solid burlywood;
             display: flex;
-            width: 50%;
+            width: 100%;
         }
 
         .origen {
@@ -23,9 +23,11 @@
             background-color: aqua;
             margin: 10px;
             padding: 10px;
+            float: left;
+            width: 25%;
         }
 
-        .destino {
+        #destino {
             background-color: pink;
             flex-basis: 100%;
             flex-grow: 1;
@@ -36,7 +38,7 @@
 
 <body>
     <div class="contenedor">
-        <div class="origen">
+        <div class="origen destino">
             <img src="../ut08/img/perro.png" id="imagen" class="arrastrable" alt="">
             <div id="viajero1" class="arrastrable" draggable="true">
                 arrastrable
@@ -51,12 +53,17 @@
     </div>
     <script>
         let as = document.getElementsByClassName('arrastrable');
-        let $destino = document.getElementById('destino');
+        let $destinos = document.getElementsByClassName('destino');
 
+        function quitarArrastrar(e){
+            //e.target.removeEventListener('dragstart',onDragStart);
+            e.target.removeAttribute('draggable');
+            e.target.style.backgroundColor='Yellow';
+        }
 
         for (a of as) {
             a.addEventListener('dragstart', onDragStart, false);
-        }
+            a.addEventListener('dblclick',quitarArrastrar)        }
 
 
         function onDragStart(e) {
@@ -64,24 +71,30 @@
             e.target.style.border = "2px dashed orange";
         }
 
-        $destino.addEventListener('dragover', onDragOver, false)
+
         function onDragOver(ev) {
             ev.preventDefault();
-            ev.stopPropagation();
+            
             /*e.target.innerHTML='Descargar' */
 
         }
+        for (d of $destinos) {
+            d.addEventListener('dragover', onDragOver)
+            d.addEventListener('drop', onDrop)
+        }
 
-        $destino.addEventListener('drop', onDrop, false)
+
         function onDrop(e) {
-            if (e.target.id == 'destino') {
+            if (e.target.classList.contains('destino')) {
+                console.log('hola')
                 const id = e.dataTransfer.getData('text');
-
                 let $soltado = document.getElementById(id);
+
                 e.target.appendChild($soltado);
                 e.dataTransfer.clearData();
+                e.stopPropagation();
             }
-            e.preventDefault();
+            
 
 
         }
