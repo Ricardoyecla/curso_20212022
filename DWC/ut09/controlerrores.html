@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="men"></h1>
+    <input type="number" name="" id="">
+    <script>
+        'use strict'
+        let x;
+        let error=new Error('No es pepe')
+        x='jose';
+        /* if (x=='jose')
+            throw error;
+        else    
+            alert('hola pepep')
+ */
+        let e1 = new EvalError('eee');
+        let e2 = new SyntaxError('dddd');
+        let e3 = new URIError('dasdsfd');
+        let errores;
+        errores=[e1,e2,e3];
+
+        try{
+             
+             //alert('HOla')
+             //throw new EvalError('error de evallll');
+             throw errores[Math.round(Math.random()*2)]
+        }
+        catch(err) {
+            if ( err instanceof EvalError){
+                 document.getElementById('men').innerHTML=`<span>${err.message}De Eval</span>`
+            } else if (err instanceof SyntaxError){
+                document.getElementById('men').innerHTML=`<span>${err.message}De Syntasxis</span>`
+            } else{
+                document.getElementById('men').innerHTML=`<span>${err.message}de otro tipo</span>`
+
+            }
+           
+
+        }
+        finally{
+            document.getElementById('men').innerHTML+='Ricardo'
+        }
+       
+
+        console.log(x);
+    </script>
+</body>
+</html>
