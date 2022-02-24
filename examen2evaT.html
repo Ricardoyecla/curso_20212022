@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contenedor {
+            display: flex;
+            flex-wrap: nowrap;
+            margin-left: 1em;
+            margin-right: 1em;
+        }
+
+        .col {
+            text-align: center;
+            border-left: 5px solid white;
+            padding: 1rem;
+            background-color: gainsboro;
+            padding-top: 0.4rem;
+            flex-grow: 1;
+        }
+
+        h2 {
+            border: 1px solid black;
+            padding: 0.6em;
+            margin-bottom: 1em;
+            background-color: pink;
+        }
+
+        h1 {
+            margin: 0.5em;
+            text-align: center;
+        }
+
+        .panel {
+            margin-top: 2em;
+            margin-left: 1em;
+            margin-right: 1em;
+            border: 1px solid black;
+            padding: 1em;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .tarjeta {
+            background-color: red;
+            padding: 2em;
+            margin-bottom: 1.5em;
+        }
+
+        .tarjeta button {
+            margin-top: 0.5em;
+        }
+
+        button {
+            padding: 0.3em;
+        }
+
+        .todo {
+            background-color: rgb(248, 252, 0);
+        }
+
+        .proceso {
+            background-color: rgb(248, 141, 0);
+        }
+
+        .terminado {
+            background-color: rgb(253, 30, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="panel">
+        <label for="">Título</label>
+        <input type="text" id="iTitulo" />
+        <label for="">Descripción</label>
+        <input type="text" id="iDescripcion" />
+        <button id="bAñadir">Añadir</button>
+        <label for="">Nombre del KANBAN</label>
+        <input type="text" id="iNombre" />
+        <button id="iCookie">Añadir nombre como cookie</button>
+    </div>
+    <h1>Tablero KANBAN</h1>
+    <div class="contenedor">
+        <div id="todo" class="col">
+            <h2>ToDo</h2>
+        </div>
+        <div id="proceso" class="col">
+            <h2>En Proceso</h2>
+        </div>
+        <div id="terminado" class="col">
+            <h2>Terminado</h2>
+        </div>
+    </div>
+
+</body>
+
+</script>
+
+</html>
