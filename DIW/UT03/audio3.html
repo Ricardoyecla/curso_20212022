@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-8 offset-2 border border-dark border-4 bg-warning">
+          asa
+        </div>
+        <div class="col-8 offset-2 border border-dark border-4">asa</div>
+      </div>
+      <div class="row">
+        <div class="col-12 bg-info border border-dark border-4">controles</div>
+      </div>
+
+      <div class="row">
+        <div class="col-3 bg-primary border border-dark border-4">altavoz</div>
+        <div class="col-6 bg-primary border border-dark border-4">altavoz</div>
+        <div class="col-3 bg-primary border border-dark border-4">altavoz</div>
+      </div>
+    </div>
+    <button id="bPlay">Play</button>
+    <button id="bPause">Pause</button>
+    <button id="bStop">Stop</button>
+    <h1>Info</h1>
+    <p>Volumen <input id="rvolumen" type="range" step="0.2" min="0" max="1" value="1"></p>
+    <p>Tiempo <input id="rtiempo" type="range" step="1" min="0" max="1" value="0">
+
+    <ul class="lista">
+        <li>IZAL.mp3</li>
+        <li>The.mp3</li>
+    </ul>
+    
+    
+    <script>
+      let cancion = new Audio("./ejemplos/sonidos/IZAL.mp3");
+      let bPlay=document.getElementById('bPlay');
+      let bPause=document.getElementById('bPause');
+      let bStop=document.getElementById('bStop');
+      let tiempo=document.getElementById('rtiempo');
+      let Volumen=document.getElementById('rvolumen');
+
+      bPlay.addEventListener('click',()=>{
+         console.log('play');
+         cancion.play();
+      })
+      
+      bStop.addEventListener('click',()=>{
+         console.log('stop');
+         cancion.load();
+      }) 
+      bPause.addEventListener('click',()=>{
+         console.log('stop');
+         cancion.pause();
+      }) 
+     cancion.addEventListener('timeupdate',()=>{
+       tiempo.value=cancion.currentTime;
+       tiempo.setAttribute('max',cancion.duration);
+     })
+
+	Volumen.addEventListener('change',()=>{
+		cancion.volume=Volumen.value;
+	})
+     tiempo.addEventListener('change',()=>{
+     console.log('cambio')
+      tiempo.setAttribute('max',cancion.duration);
+      cancion.currentTime=tiempo.value;
+      
+     })
+    </script>
+  </body>
+</html>
+
