@@ -1,10 +1,11 @@
-
+import React from 'react'
+import Contador from './components/Contador';
 
 function App() {
   return (
-    <div className="App">
-      
-      <h1>Hola soy ricardo</h1>
+    <div>
+      <h1>Hola sffoy ricardo</h1>
+      <Contador />
     </div>
   );
 }
