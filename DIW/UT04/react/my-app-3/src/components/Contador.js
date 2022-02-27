@@ -9,9 +9,9 @@ const Contador = () => {
     return ( 
         <Fragment>
              <h3>Mi web {numero}</h3>
-            <button>Aumentar</button>
+            <button onClick={()=>setNumero(numero+1)}>Aumentar</button>
         </Fragment>
      );
-}
+}   
  
 export default Contador;
