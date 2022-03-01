@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Modificar el id de abajo para dar error mayor que 3 da error.
+        function traeHeroeCod(id) {
+            const heroes = [{
+                id: 0,
+                nombre: 'Iron Man'
+            }, {
+                id: 1,
+                nombre: 'Spiderman'
+            }, {
+                id: 2,
+                nombre: 'Thor'
+            }];
+            console.log(`Buscando el heroe con id:${id}`)
+
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (id <= heroes.length) {
+                        //console.log(`el heroe con id:${id} es ${heroes[id].nombre}`)
+                        resolve(heroes[id])
+                    } else {
+                        //console.log(`el heroe con id:${id} no existe}`)
+                        reject(`el heroe con id:${id} no existe`)
+                    }
+                }, 2000);
+            })
+
+        };
+
+
+        function pintaTuHeroe(heroe) {
+            return new Promise((resolve, reject) => {
+                const mensaje = `Pintando en pantalla al heroe ${heroe.nombre}****`
+                return resolve(mensaje)
+            })
+        }
+
+        let id = 1;
+
+        traeHeroeCod(id)
+            .then((datos) => {
+                console.log(`Tu herore es ${datos.nombre} y su código es ${datos.id}`)
+                return pintaTuHeroe(datos)
+            })
+            .then((datos)=>{
+                console.log(datos)
+            })
+            .catch((datosError) => {
+                console.log(datosError)
+            })
+
+    </script>
+</body>
+
+</html>

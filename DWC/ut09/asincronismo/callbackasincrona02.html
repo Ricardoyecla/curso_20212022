@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Si lo provamos con 0 tambien falla.
+        function traeHeroeCod(id,callback) {
+            const heroes = [{
+                id: 0,
+                nombre: 'Iron Man'
+            }, {
+                id: 1,
+                nombre: 'Spiderman'
+            }, {
+                id: 2,
+                nombre: 'Thor'
+            }];
+             console.log(`Buscando el heroe con id:${id}`)
+
+            setTimeout(() => {
+                console.log(`el heroe con id:${id} es ${heroes[id].nombre}`)
+                callback(heroes[id].nombre)
+          },2000);
+        } ;
+
+        const muestraHeroe = (nombre) => {
+            console.log(`mostrando a ${nombre}`)
+        }
+
+        let id=1;
+        traeHeroeCod(id,muestraHeroe);
+       
+    </script>
+</body>
+
+</html>
