@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label for="">Pon un id de usuario para mostrar su ciudad</label>
+        <input type="text" id="iId">
+        <button id="bBuscar">Buscar</button>
+        <h1 id="cUsuario">Nombre usuario: </h1>
+        <h1 id="cCiudad">Nombre ciudad: </h1>
+    </div>
+    <script>
+        const usuarios = [
+            { id: 1, nombre: 'Max Rebo', ciudad: 4 },
+            { id: 2, nombre: 'Boba Fett', ciudad: 3 },
+            { id: 3, nombre: 'Jabba el Hutt', ciudad: 2 },
+            { id: 4, nombre: 'Obi-Wan Kenobi', ciudad: 1 }
+        ];
+        const ciudades = [
+            { id: 1, nombre: 'Carkoon' },
+            { id: 2, nombre: 'Tatooine' },
+            { id: 3, nombre: 'Tipoca' },
+            { id: 4, nombre: 'Stewjon' }
+        ]
+        let $buscar=document.getElementById('bBuscar');
+        let $id=document.getElementById('iId')
+        let $usuario=document.getElementById('cUsuario');
+        let $ciudad=document.getElementById('cCiudad');
+
+        $buscar.addEventListener('click',()=>{    
+           getNombreUsuario($id.value,getNombreCiudad)
+        })
+
+         function getNombreUsuario(id,callback){
+            setTimeout(()=>{
+                $usuario.innerHTML=`Nombre usuario:${usuarios[id-1].nombre}`
+                callback(usuarios[id-1],muestraNombreCiudad)
+            },2000)
+        }
+
+        function getNombreCiudad(usuario,callback){
+            setTimeout(()=>{
+                console.log((usuario.ciudad)-1)
+                console.log(ciudades[(usuario.ciudad)-1])
+                callback(ciudades[(usuario.ciudad)-1])
+            },2000)
+        } 
+
+        function muestraNombreCiudad(ciudad){
+            $ciudad.innerHTML=`Nombre ciudad: ${ciudad.nombre}`
+        }
+
+
+    </script>
+</body>
+
+</html>
