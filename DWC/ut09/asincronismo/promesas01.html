@@ -13,14 +13,9 @@
         // Modificar el id de abajo para dar error mayor que 3 da error.
         function traeHeroeCod(id) {
             const heroes = [{
-                id: 0,
-                nombre: 'Iron Man'
-            }, {
-                id: 1,
-                nombre: 'Spiderman'
-            }, {
-                id: 2,
-                nombre: 'Thor'
+                id: 0,nombre: 'Iron Man'}, {
+                id: 1,nombre: 'Spiderman'}, {
+                id: 2,nombre: 'Thor'
             }];
             console.log(`Buscando el heroe con id:${id}`)
 
@@ -35,11 +30,9 @@
                     }
                 }, 2000);
             })
-
         };
-       
-        let id = 1;
-        traeHeroeCod(id)
+
+        traeHeroeCod(1)
             .then((datos)=>{
             console.log(`Tu herore es ${datos.nombre} y su código es ${datos.id}`)
             })
