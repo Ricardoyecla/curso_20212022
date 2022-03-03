@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Poemas gratis</h1>
+    <button>Trae un poema</button>
+    <pre id="poema"></pre>
+    <script>
+        //En la dirección https://api.generadordni.es/v2/doi/nif/
+        //Nos devuelve una nif aleatorio
+        //Hacer una página web que al pulsar un botón añada a una lista
+        //Un nif aleatorio.
+
+        let $poema=document.getElementById('poema')
+
+        const pedirPoema=async(donde)=>{
+            const poema=await fetch('https://jorgesanchez.net/servicios/poesia.php',
+            {cache: "no-cache"})
+            const poema_texto=await poema.text()
+            donde.innerHTML=poema_texto;
+        }
+
+        document.getElementsByTagName('button')[0].addEventListener('click',()=>{
+            pedirPoema($poema)
+        })
+    </script>
+</body>
+</html>
