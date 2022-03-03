@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //Petición sencilla solo devuelve una promesa
+        //Para procesar necesitamos async y await o then y catch
+        /* const pedirDatos=()=>{
+            const respuesta=fetch('https://jsonplaceholder.typicode.com/users')
+            console.log(respuesta)
+        };
+
+        pedirDatos() */
+
+        //Procesamos la promesa con async y await. Pare tener ya una repuesta.
+        //Vemos el estado 200 que quiere decir que todo ha ido bien
+        //Dentro de body tengo todos los datos, pero necesito convertilos para poder utilizarlos.
+
+        /*   const pedirDatos= async()=>{
+              //Este await hace que espere a la petición
+              const respuesta= await fetch('https://jsonplaceholder.typicode.com/users')
+              console.log(respuesta)
+          };
+  
+          pedirDatos() */
+
+        //Vamos a procesar los datos que tengo dentro de body
+        /* const pedirDatos = async () => {
+            //Este await hace que espere a la petición
+            const respuesta = await fetch('https://jsonplaceholder.typicode.com/users')
+            //Tal y como esta respuesta.json() nos devuelve una promesa, en el proximo paso
+            // necesitamos que espere para convertir los datos. Usaremos un await.
+            const datos = respuesta.json();
+            console.log(datos)
+        };
+
+        pedirDatos()
+ */
+
+        //En este paso procesamos los datos para podermostrarlos.
+
+        const pedirDatos = async () => {
+            //Este await hace que espere a la petición
+            const respuesta = await fetch('https://jsonplaceholder.typicode.com/users')
+           //Este await hace que espere al procesado de los datos de la petición
+            const datos = await respuesta.json();
+            console.log(datos)
+        };
+
+        pedirDatos()
+
+    </script>
+</body>
+
+</html>

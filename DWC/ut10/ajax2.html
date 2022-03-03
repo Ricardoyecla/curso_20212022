@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        
+        //Petición único parámetro.
+
+        /* const pedirDatos = async () => {
+            //Este await hace que espere a la petición
+            const respuesta = await fetch('https://jsonplaceholder.typicode.com/users')
+           //Este await hace que espere al procesado de los datos de la petición
+            const datos = await respuesta.json();
+            console.log(datos)
+        }; */
+
+        //Añadimos el método es por defecto para indicar el tipo de petición
+        //Puede ser GET, POST,DELETE,PUT.
+
+
+        /* const pedirDatos = async () => {
+            //Este await hace que espere a la petición
+            const respuesta = await fetch('https://jsonplaceholder.typicode.com/users',{
+                method:'GET'
+            })
+           //Este await hace que espere al procesado de los datos de la petición
+            const datos = await respuesta.json();
+            console.log(datos)
+        }; */
+
+
+        // Si quiero enviar mas información al servidor (si este la necesita)
+        // se hace añadiendo unas cabeceras no tienen porque ser obligatorias, 
+        // Se pasan como objetos también, entre la información que se puede pasar esta:
+        // 
+
+        /* const pedirDatos = async () => {
+            //Este await hace que espere a la petición
+            const respuesta = await fetch('https://jsonplaceholder.typicode.com/users',{
+                method:'GET',
+                headers:{
+                    'Content-Type':'application/json',
+                    'otrodatos':'mioos'
+                }
+            })
+           //Este await hace que espere al procesado de los datos de la petición
+            const datos = await respuesta.json();
+            console.log(datos)
+        }; */
+
+        //Si queremos enviar información al servidor para almacenar en la bbdd usamos POST y 
+        // la información en el body, tanto el body como headers, se pueden crear fuera como objetos
+        // con new y añadir posteriormente. Normalmente enviamos un json con los datos de a actualizar
+       
+       /*  const pedirDatos = async () => {
+            //Este await hace que espere a la petición
+            const respuesta = await fetch('https://jsonplaceholder.typicode.com/users',{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json',
+                    'otrodatos':'mioos'
+                },
+                body:JSON.stringify({
+                    id:'4',
+                    nombre:'Deadpool'
+                })
+            })
+           //Este await hace que espere al procesado de los datos de la petición
+            const datos = await respuesta.json();
+            console.log(datos)
+        }; */
+
+
+        pedirDatos()
+
+
+
+
+    </script>
+</body>
+
+</html>
